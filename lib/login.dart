@@ -2,12 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-
-
-
-
-
-
+import 'home.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -151,7 +146,7 @@ class RegisterUserState extends State {
                       width: MediaQuery.of(context).size.width*0.8,
                       decoration: new BoxDecoration(
                         gradient: new LinearGradient(
-                          colors: [Colors.blueAccent, Colors.lightBlueAccent],
+                          colors: [Colors.deepOrangeAccent, Colors.orangeAccent],
                           begin: FractionalOffset.centerLeft,
                           end: FractionalOffset.centerRight,
                         ),
@@ -186,7 +181,7 @@ class RegisterUserState extends State {
                       width: MediaQuery.of(context).size.width*0.8,
                       decoration: new BoxDecoration(
                         gradient: new LinearGradient(
-                          colors: [Colors.green, Colors.lightGreenAccent],
+                          colors: [Colors.lightGreenAccent, Colors.greenAccent],
                           begin: FractionalOffset.centerLeft,
                           end: FractionalOffset.centerRight,
                         ),
@@ -194,6 +189,10 @@ class RegisterUserState extends State {
                       ),
                       child: TextButton(
                         onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => homeapp()),
+                          );
 
                         },
                         child: new Text('Contact',
