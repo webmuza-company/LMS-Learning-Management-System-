@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
 
@@ -51,7 +52,20 @@ class _MyHomePageState extends State<MyHomePage> {
               decoration: BoxDecoration(
                 color: Colors.orange,
               ),
-              child: Text('Drawer Header'),
+              child: Column(
+                children: [
+                  Container(height: 100,width: 100,
+                    child: CircleAvatar(
+                      backgroundImage: NetworkImage('https://media.istockphoto.com/photos/facing-my-future-with-confidence-picture-id1139495117?k=6&m=1139495117&s=612x612&w=0&h=a2hxTvHq7XNN0zMh8m1CuyDPIaNYiswD7iZbh5rpac4='),
+                    ),
+                  ),
+                  Container(margin: EdgeInsets.all(5),
+                    child: Text('Jennifer Margret',style: TextStyle(
+                      color: Colors.white
+                    ),),
+                  )
+                ],
+              ),
             ),
             ListTile(
               title: Text('Courses'),
@@ -74,24 +88,34 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               title: Text('Logout'),
               onTap: () {
-                // Update the state of the app
-                // ...
-                // Then close the drawer
-                Navigator.pop(context);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
               },
             ),
           ],
         ),
       ),
       appBar: AppBar(
+
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
       body:Column(
-        children: [Container(
-          child: Text('welcome'),
-        )],
+        children: [
+         Container(
+           child: Row(
+             children: [
+               Card(
+
+               )
+             ],
+           ),
+         ),
+        ],
       ),
       // This trailing comma makes auto-formatting nicer for build methods.
     );
