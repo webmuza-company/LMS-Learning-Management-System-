@@ -14,7 +14,7 @@ class homeapp extends StatelessWidget {
       title: 'Blending project',
       theme: ThemeData(
           appBarTheme: AppBarTheme(
-            backgroundColor: Colors.orange,
+            backgroundColor: Colors.deepOrangeAccent
           )),
       home: MyHomePage(title: 'Dashboard'),
     );
@@ -50,7 +50,11 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.orange,
+                  gradient: new LinearGradient(
+                    colors: [Colors.red,Colors.deepOrange,Colors.deepOrangeAccent ,Colors.orange],
+                    begin: FractionalOffset.centerLeft,
+                    end: FractionalOffset.centerRight,
+                  ),
               ),
               child: Column(
                 children: [
@@ -68,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ListTile(
-              title: Text('Courses'),
+              title: Text('Syllabus'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -77,7 +81,25 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: Text('Attendace'),
+              title: Text('Rewards'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('FAQs'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('HELP & SUPPORT'),
               onTap: () {
                 // Update the state of the app
                 // ...
@@ -100,24 +122,217 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       appBar: AppBar(
 
-        // Here we take the value from the MyHomePage object that was created by
+        // Here we tke the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
-      ),
-      body:Column(
-        children: [
-         Container(
-           child: Row(
-             children: [
-               Card(
-
-               )
-             ],
-           ),
-         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(
+              Icons.notifications,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              // do something
+            },
+          )
         ],
       ),
+      body:SingleChildScrollView(
+        child: Column(
+          children: [
+
+            Container(margin: EdgeInsets.only(top: 8),
+              child: Container(
+                child: Row(
+                  children: [
+                    Container(margin: EdgeInsets.only(left: 7),
+                      width: 410,
+                      height: 250,
+
+                      decoration: BoxDecoration(
+                        gradient: new LinearGradient(
+                          colors: [Colors.red,Colors.deepOrange,Colors.deepOrangeAccent ,Colors.orange],
+                          begin: FractionalOffset.centerLeft,
+                          end: FractionalOffset.centerRight,
+                        ),
+                        borderRadius: BorderRadius.circular(10),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.deepOrange.withOpacity(0.5),
+                              offset: Offset(0, 25),
+                              blurRadius: 3,
+                              spreadRadius: -10),
+                        ],
+
+                      ),
+                      child: Row(
+                        children: [
+                          Container(margin: EdgeInsets.only(top: 8,left: 10,),
+                            child: Container(
+                              child: CircleAvatar(
+                                backgroundColor: Colors.black,
+                                radius: 50.0,
+                                backgroundImage: NetworkImage('https://media.istockphoto.com/photos/facing-my-future-with-confidence-picture-id1139495117?k=6&m=1139495117&s=612x612&w=0&h=a2hxTvHq7XNN0zMh8m1CuyDPIaNYiswD7iZbh5rpac4='),
+
+                              ),
+                            ),
+                          ),
+                          Container(
+                            child: Column(
+                              children: [
+                                Container(margin: EdgeInsets.only(left: 20,top: 90),
+                                  child: Text('Jeniffer',style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold),),
+                                ),
+                                Container(margin: EdgeInsets.only(top: 10),
+                                  child: Text('Active',style: TextStyle(color: Colors.white,fontSize: 20)),
+                                ),
+                                Container(margin: EdgeInsets.only(top: 10),
+                                  child: TextButton(
+                                    style: ButtonStyle(
+                                      backgroundColor: MaterialStateProperty.all<Color>(Colors.white24),
+                                    ),
+                                    onPressed: () {},
+                                    child: const Text('Profile',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Container (margin: EdgeInsets.only(left: 35),
+                            child: Text('Level: 5',style: TextStyle(color: Colors.black54,fontSize: 25,fontWeight: FontWeight.bold),),
+                          ),
+
+
+                        ],
+                      ),
+
+
+                    )
+                  ],
+                ),
+              ),
+
+            ),
+            Container(
+              margin: EdgeInsets.only(top: 45),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20.0),
+                    topLeft: Radius.circular(20.0)),
+                image: DecorationImage(
+                  image: NetworkImage('https://images.pexels.com/photos/6985193/pexels-photo-6985193.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Column(
+                children: [
+                  Container(
+                    child: Row(
+                      children: [
+                        Container(margin: EdgeInsets.only(top: 25,left: 8),
+                          child: Row(
+                            children: [
+                              Container(
+                                margin: EdgeInsets.all(3),
+                                height: 200,
+                                width: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25),
+                                  color: Colors.deepOrange.withOpacity(0.5)
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text('LIVE-CLASS',textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color:Colors.white,
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold,),),
+                                ),
+                              ),
+                              Container(
+                                margin: EdgeInsets.all(3),
+                                height: 200,
+                                width: 200,
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(25),
+                                    color: Colors.redAccent.withOpacity(0.5)
+                                ),
+                                child: Align(
+                                  alignment: Alignment.center,
+                                  child: Text('ATTENDANCE',textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      color:Colors.white,
+                                      fontSize: 25,
+                                      fontWeight: FontWeight.bold,),),
+                                ),
+                              ),
+
+
+                            ],
+                          ),
+                        ),
+
+
+                      ],
+                    ),
+
+                  ),
+
+                  Container(
+                    margin: EdgeInsets.only(left: 10,),
+                    child: Row(
+                      children: [
+                        Container(
+                          margin: EdgeInsets.all(3),
+                          height: 200,
+                          width: 200,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              color: Colors.green.withOpacity(0.5)
+                          ),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text('RESULT',textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color:Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,),),
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(3),
+                          height: 200,
+                          width: 200,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              color: Colors.purple.withOpacity(0.5)
+                          ),
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: Text('HOMEWORK',textAlign: TextAlign.center,
+                              style: TextStyle(
+                                color:Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,),),
+                          ),
+                        ),
+
+
+                      ],
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
+
+          ],
+        ),
+      )
+
+
       // This trailing comma makes auto-formatting nicer for build methods.
     );
+
   }
 }

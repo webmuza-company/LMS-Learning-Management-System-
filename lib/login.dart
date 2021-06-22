@@ -109,7 +109,10 @@ class RegisterUserState extends State {
                           shape: BoxShape.circle,
                         ),
                         padding: EdgeInsets.all(10.0),
-                        child: Image.network('https://cdn.pixabay.com/photo/2020/09/22/05/26/school-5591958_960_720.png')                   ),
+                        child: CircleAvatar(
+                          radius: 70,
+                          backgroundImage: NetworkImage('https://cdn.pixabay.com/photo/2020/09/22/05/26/school-5591958_960_720.png'),
+                        ),                  ),
 
 
                     Container(margin: EdgeInsets.only(top: 22),
