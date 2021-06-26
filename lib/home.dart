@@ -250,41 +250,41 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
              child: Container(
                height: 400,
                width: 380,
-               color: Colors.deepOrange.withOpacity(0.2),
+               color: Colors.blue,
                child: Column(
                  children: [
                    Container(margin: EdgeInsets.only(top: 5),
-                     child: Text('live chat',style: TextStyle(color: Colors.green,),),
+                     child: Text('live chat',style: TextStyle(color: Colors.white,),),
                    ),
                    SizedBox(
                      height: 20,
                    ),
                    Container(margin: EdgeInsets.only(right: 10),
-                     child: Text('Aman : and typesetting industry. Lorem Ipsum has been the industry'),
+                     child: Text('Aman : and typesetting industry. Lorem Ipsum has been the industry',style: TextStyle(color: Colors.white),),
                    ),
                    SizedBox(
                      height: 20,
                    ),
                    Container(margin: EdgeInsets.only(right: 10),
-                     child: Text('Shreya : It is a long established fact that a reader will be distracted'),
+                     child: Text('Shreya : It is a long established fact that a reader will be distracted',style: TextStyle(color: Colors.white),),
                    ),
                    SizedBox(
                      height: 20,
                    ),
                    Container(margin: EdgeInsets.only(right: 10),
-                     child: Text('Alen : using Lorem Ipsum is that it has a more-or-less normal distribution'),
+                     child: Text('Alen : using Lorem Ipsum is that it has a more-or-less normal distribution',style: TextStyle(color: Colors.white),),
                    ),
                    SizedBox(
                      height: 20,
                    ),
                    Container(margin: EdgeInsets.only(right: 10),
-                     child: Text('Puja : There are many variations of passages of Lorem Ipsum available'),
+                     child: Text('Puja : There are many variations of passages of Lorem Ipsum available',style: TextStyle(color: Colors.white),),
                    ),
                    SizedBox(
                      height: 20,
                    ),
                    Container(margin: EdgeInsets.only(right: 10),
-                     child: Text('priya : and typesetting industry. Lorem Ipsum has been the industry'),
+                     child: Text('priya : and typesetting industry. Lorem Ipsum has been the industry',style: TextStyle(color: Colors.white),),
                    ),
                    SizedBox(
                      height: 10,
@@ -293,15 +293,24 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                      child: TextField(
                        decoration: InputDecoration(
                            border: OutlineInputBorder(),
-                           hintText: 'Enter Message'
+                           hintText: 'Enter Message',suffixStyle: TextStyle(color: Colors.white,),
                        ),
                      ),
                    ),
                    ElevatedButton(
-
-                     onPressed: () {},
-                     child: const Text('Send'),
-                   )
+                     child: Text('send'),
+                     onPressed: () {
+                       print('Pressed');
+                     },
+                     style: ButtonStyle(
+                       backgroundColor: MaterialStateProperty.resolveWith<Color>(
+                             (Set<MaterialState> states) {
+                           if (states.contains(MaterialState.pressed)) return Colors.redAccent.withOpacity(0.5);
+                           return Colors.greenAccent;
+                         },
+                       ),
+                     ),
+                   ),
                  ],
                ),
              ),
