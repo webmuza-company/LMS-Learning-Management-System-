@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'login.dart';
+import 'servererror.dart';
 
 
 void main() => runApp(homeapp());
@@ -42,7 +43,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       child: Column(
         children: [
 
-          Container(margin: EdgeInsets.only(top: 8),
+          Container(
             child: Container(
               child: Row(
                 children: [
@@ -124,26 +125,33 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 Container(
                   child: Row(
                     children: [
+
                       Container(margin: EdgeInsets.only(top: 25,left: 8),
                         child: Row(
                           children: [
                             Container(
-                              margin: EdgeInsets.all(3),
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(25),
-                                  color: Colors.deepOrange.withOpacity(0.5)
-                              ),
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text('LIVE-CLASS',textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    color:Colors.white,
-                                    fontSize: 25,
-                                    fontWeight: FontWeight.bold,),),
+                              child: InkWell(
+                                child: Container(
+                                  margin: EdgeInsets.all(3),
+                                  height: 200,
+                                  width: 200,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(25),
+                                      color: Colors.deepOrange.withOpacity(0.5)
+                                  ),
+                                  child: Align(
+                                    alignment: Alignment.center,
+                                    child: Text('Exams',textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                        color:Colors.white,
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold,),),
+                                  ),
+                                ),
+
                               ),
                             ),
+
                             Container(
                               margin: EdgeInsets.all(3),
                               height: 200,
@@ -154,7 +162,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               ),
                               child: Align(
                                 alignment: Alignment.center,
-                                child: Text('ATTENDANCE',textAlign: TextAlign.center,
+                                child: Text('Classwork',textAlign: TextAlign.center,
                                   style: TextStyle(
                                     color:Colors.white,
                                     fontSize: 25,
@@ -227,56 +235,81 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     Container(
      child: Column(
        children: [
+         SizedBox(
+           height: 15,
+         ),
          Container(
-           child: Text('Live Class',style: TextStyle(fontWeight: FontWeight.bold,fontSize: 40,color: Colors.red),),
+           child: Text('LIVE',style: TextStyle(color: Colors.red),),
          ),
-         Card(
-           child: ListTile(
-             leading: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1hJ99NFJSkNxfug5YJLCHIveszMzv8JcG5A&usqp=CAU', fit: BoxFit.fill,),
-             title: Text('Physics'),
-             subtitle: Text('Here is a second line'),
-             trailing: Icon(Icons.more_vert),
-           ),
+         Container(
+           child: Image.network('https://st.depositphotos.com/1924257/2618/v/950/depositphotos_26183695-stock-illustration-web-or-internet-based-glossy.jpg'),
+
          ),
-         Card(
-           child: ListTile(
-             leading: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1hJ99NFJSkNxfug5YJLCHIveszMzv8JcG5A&usqp=CAU', fit: BoxFit.fill,),
-             title: Text('Biology'),
-             subtitle: Text('Here is a second line'),
-             trailing: Icon(Icons.more_vert),
-           ),
-         ),
-         Card(
-           child: ListTile(
-             leading: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1hJ99NFJSkNxfug5YJLCHIveszMzv8JcG5A&usqp=CAU', fit: BoxFit.fill,),
-             title: Text('Chemistry'),
-             subtitle: Text('Here is a second line'),
-             trailing: Icon(Icons.more_vert),
-           ),
-         ),
-         Card(
-           child: ListTile(
-             leading: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1hJ99NFJSkNxfug5YJLCHIveszMzv8JcG5A&usqp=CAU', fit: BoxFit.fill,),
-             title: Text('Maths'),
-             subtitle: Text('Here is a second line'),
-             trailing: Icon(Icons.more_vert),
-           ),
-         ),
-         Card(
-           child: ListTile(
-             leading: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1hJ99NFJSkNxfug5YJLCHIveszMzv8JcG5A&usqp=CAU', fit: BoxFit.fill,),
-             title: Text('English'),
-             subtitle: Text('Here is a second line'),
-             trailing: Icon(Icons.more_vert),
-           ),
-         ),
-         Card(
-           child: ListTile(
-             leading: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1hJ99NFJSkNxfug5YJLCHIveszMzv8JcG5A&usqp=CAU', fit: BoxFit.fill,),
-             title: Text('Hindi'),
-             subtitle: Text('Here is a second line'),
-             trailing: Icon(Icons.more_vert),
-           ),
+         Container(
+           child: SingleChildScrollView(
+             child: Container(
+               height: 400,
+               width: 380,
+               color: Colors.deepOrange.withOpacity(0.2),
+               child: Column(
+                 children: [
+                   Container(margin: EdgeInsets.only(top: 5),
+                     child: Text('live chat',style: TextStyle(color: Colors.green,),),
+                   ),
+                   SizedBox(
+                     height: 20,
+                   ),
+                   Container(margin: EdgeInsets.only(right: 10),
+                     child: Text('Aman : and typesetting industry. Lorem Ipsum has been the industry'),
+                   ),
+                   SizedBox(
+                     height: 20,
+                   ),
+                   Container(margin: EdgeInsets.only(right: 10),
+                     child: Text('Shreya : It is a long established fact that a reader will be distracted'),
+                   ),
+                   SizedBox(
+                     height: 20,
+                   ),
+                   Container(margin: EdgeInsets.only(right: 10),
+                     child: Text('Alen : using Lorem Ipsum is that it has a more-or-less normal distribution'),
+                   ),
+                   SizedBox(
+                     height: 20,
+                   ),
+                   Container(margin: EdgeInsets.only(right: 10),
+                     child: Text('Puja : There are many variations of passages of Lorem Ipsum available'),
+                   ),
+                   SizedBox(
+                     height: 20,
+                   ),
+                   Container(margin: EdgeInsets.only(right: 10),
+                     child: Text('priya : and typesetting industry. Lorem Ipsum has been the industry'),
+                   ),
+                   SizedBox(
+                     height: 10,
+                   ),
+                   Container(
+                     child: TextField(
+                       decoration: InputDecoration(
+                           border: OutlineInputBorder(),
+                           hintText: 'Enter Message'
+                       ),
+                     ),
+                   ),
+                   ElevatedButton(
+
+                     onPressed: () {},
+                     child: const Text('Send'),
+                   )
+                 ],
+               ),
+             ),
+                   ),
+
+
+
+
          ),
        ],
      ),
@@ -532,6 +565,15 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
             ListTile(
               title: Text('Rewards'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Fees'),
               onTap: () {
                 // Update the state of the app
                 // ...
