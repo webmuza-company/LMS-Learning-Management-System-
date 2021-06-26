@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'login'),
+      home: MyHomePage(title: 'LAUCH ROCKET CLICK HERE.'),
     );
   }
 }

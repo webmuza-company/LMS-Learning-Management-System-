@@ -100,7 +100,7 @@ class RegisterUserState extends State {
                       height: MediaQuery.of(context).size.height*0.15,
                     ),
                     Container(
-                      child: Text('Admin Pannel',style: TextStyle(fontSize: 25,),),
+                      child: Text('STUDENT',style: TextStyle(color:Colors.orangeAccent,fontSize: 25,fontWeight: FontWeight.bold),),
                     ),
 
                     Container(margin: EdgeInsets.only(top: 20),
